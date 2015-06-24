@@ -5,12 +5,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Phalcon PHP Framework</title>
         <base href="/PDC/"/>
-    {% block library %}
-        {{ stylesheet_link('css/cssPlantilla.css') }}
-        {{ stylesheet_link('css/cssFormulario.css') }}
-    {% endblock %}
+    
+        <?php echo $this->tag->stylesheetLink('css/cssPlantilla.css'); ?>
+        <?php echo $this->tag->stylesheetLink('css/cssFormulario.css'); ?>
+    
     </head>
     <body>
-        {{ content() }}
+        <?php echo $this->getContent(); ?>
     </body>
 </html>
