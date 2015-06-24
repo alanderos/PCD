@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23/06/2015, 04:15:30 PM
+    Author     : alx
+*/
+body,html{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+body{
+    background-color: #f3d554
+}
+
+/* ----------- Galaxy S5 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+      
+      
+}
