@@ -10,6 +10,7 @@
         {{ javascript_include('js/jquery-2.1.4.min.js') }}
         {{ stylesheet_link('css/cssProfile.css') }}
         {{ javascript_include('js/profile.js') }}
+        {{ stylesheet_link('css/cssFormulario.css') }}
     {% endblock %}
     </head>
     <body>
