@@ -1,0 +1,149 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23/06/2015, 10:12:58 PM
+    Author     : alx
+*/
+.tituloPuntuacion{
+    display:block;
+}
+
+.campos{
+    color:white;
+    border:1px black solid;
+    margin: 1px;
+    display: inline-block;
+    background-color: green;
+    width: 24%;
+}
+
+#contenedorPersonal{
+
+}
+
+.puntuacionDiv{
+    border-bottom:2px solid #292929;
+    border-top:2px solid #292929;
+}
+
+#contenedorGlobal{
+}
+
+#contenedorPuntuaciones{
+    min-height: 80%;
+    max-width: 40%;
+    position: absolute;
+    top: 60px;
+    left:0px;
+    right:0px;
+    margin: auto
+}
+.contenedores{
+    padding: 5px;
+    display: inline-block;
+    margin: 10px;
+    border: 1px black solid;
+    width: 100%;
+}
+
+
+#playButtom{
+    font-size: 55px;
+    text-align: center;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    height: 70px;
+    width: 200px;
+    background-color: #2ff624;
+    border-radius: 10px;
+}
+
+@media screen 
+and (device-width: 360px) 
+and (device-height: 640px) 
+and (-webkit-device-pixel-ratio: 3) {
+    #playButtom{
+        font-size: 150px;
+        height: 200px;
+        width: 600px;
+        border-radius: 20px;
+    }
+    .puntuacionDiv{
+        border-bottom:10px solid #292929;
+        border-top:10px solid #292929;
+    }
+    .campos{
+        margin: 0px;
+        width: 49%;
+    }
+
+    #contenedorPersonal{
+
+    }
+
+    #contenedorGlobal{
+    }
+
+    #contenedorPuntuaciones{
+        font-size: 80px;
+        min-height: 80%;
+        max-width: 100%;
+        position: relative;
+
+    }
+    .contenedores{
+        padding: 5px;
+        display: inline-block;
+        margin: 0px;
+        border: 1px black solid;
+        width: 100%;
+    }
+
+}
+/* Portrait */
+
+@media screen 
+and (device-width: 640px) 
+and (device-height: 360px) 
+and (-webkit-device-pixel-ratio: 3) {
+    #playButtom{
+        font-size: 150px;
+        height: 200px;
+        width: 500px;
+        border-radius: 20px;
+    }
+    .puntuacionDiv{
+        border-bottom:5px solid #292929;
+        border-top:5px solid #292929;
+    }
+    .campos{
+        margin: 0px;
+        width: 49%;
+    }
+
+    #contenedorPersonal{
+
+    }
+
+    #contenedorGlobal{
+    }
+
+    #contenedorPuntuaciones{
+        font-size: 40px;
+        min-height: 80%;
+        max-width: 90%;
+        position: relative;
+
+    }
+    .contenedores{
+        padding: 5px;
+        display: inline-block;
+        margin: 0px;
+        border: 1px black solid;
+        width: 100%;
+    }   
+}

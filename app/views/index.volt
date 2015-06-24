@@ -7,7 +7,9 @@
         <base href="/PDC/"/>
     {% block library %}
         {{ stylesheet_link('css/cssPlantilla.css') }}
-        {{ stylesheet_link('css/cssFormulario.css') }}
+        {{ javascript_include('js/jquery-2.1.4.min.js') }}
+        {{ stylesheet_link('css/cssProfile.css') }}
+        {{ javascript_include('js/profile.js') }}
     {% endblock %}
     </head>
     <body>
