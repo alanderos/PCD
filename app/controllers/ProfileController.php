@@ -1,6 +1,6 @@
 <?php
 
-class RegisterController extends \Phalcon\Mvc\Controller
+class ProfileController extends \Phalcon\Mvc\Controller
 {
 
     public function indexAction()
