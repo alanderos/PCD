@@ -3,7 +3,7 @@
 class RegisterController extends \Phalcon\Mvc\Controller {
 
     public function indexAction() {
-        
+        $this->view->setVar('error',$this->request->get('error'));
     }
 
     public function saveAction() {
@@ -20,11 +20,12 @@ class RegisterController extends \Phalcon\Mvc\Controller {
             $user->gender = $this->request->getPost('gender', array('striptags', 'alphanum', 'trim'));
             //si el usuario no se guarda mostramos los errores
             if (!$user->save()) {
-                foreach ($user->getMessages() as $message) {
-                    $this->flash->error($message);
-                }
-                //con forward mandamos a la acción index con los errores del formulario
-                return $this->dispatcher->forward(array("action" => "index"));
+//                foreach ($user->getMessages() as $message) {
+//                    $this->flash->error($message);
+//                }
+//                //con forward mandamos a la acción index con los errores del formulario
+//                return $this->dispatcher->forward(array("action" => "index"));
+                   return $this->response->redirect('/register/?error=Faltan datos por ingresar');
             }
             //en otro caso mostramos un mensaje conforme se ha registrado y limpiamos los campos del formulario
             else {
@@ -39,7 +40,7 @@ class RegisterController extends \Phalcon\Mvc\Controller {
                 echo '<script language="javascript">';
                 echo 'alert("Te has registrado correctamente.")';
                 echo '</script>';
-                return $this->dispatcher->forward(array("action" => "index"));
+                return $this->response->redirect('/sesion/');
             }
         }
         //si no es una petición post

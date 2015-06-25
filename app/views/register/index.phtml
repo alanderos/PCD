@@ -66,4 +66,11 @@
         <input class="btn" type="button" name="submit" value="Regresar" onClick="location.href = '/PCD/sesion/'"/>
 
     </fieldset>
+
+    <script>
+       var error={{ error | json_encode }};
+        if(error!==null){
+            alert(error);
+        }
+       </script>
 </div>
