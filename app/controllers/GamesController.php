@@ -29,5 +29,20 @@ class GamesController extends \Phalcon\Mvc\Controller
     public function insertGameAction($id_user,$points,$created_at){
         $this->view->disable();
     }
+    
+    //-------------------------------------------
+    public function getGamesUsersAction()
+    {	$phql = 'select Users.username as name,Users.country as country,'
+                . 'Games.points as points,Games.created_at as date from Games,'
+                . 'Users where Games.id_user = Users.id order by Games.points';
+		$games = $this->modelsManager->executeQuery($phql);
+                echo json_encode($games->toArray());
+ 
+		
+    }
+ 
+    
+    
+    //-------------------------------------------
 }
 

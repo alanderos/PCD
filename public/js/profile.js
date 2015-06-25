@@ -20,18 +20,16 @@ var PersonalProfile = function () {
         var $header = $("header");
         $header.append($("<span>", {text: "Nombre del jugador"}),$("<span>",{text:" Puntuacion Maxima:12312312"}));
         llenaPuntuacionPeronal();
-        llenaPuntuacionGlobales();
+        
         console.log("Hola");
-//        ajax("GET"
-//                , "games/getgames", null,
-//        function (data) {
-//            console.log(data);
-//        }
-//        , function (data) {
-//            console.error(data);
-//            
-//        }
-//        );
+        ajax("POST"
+                , "games/getgames", null,
+                llenaPuntuacionGlobales
+        , function (data) {
+            console.error(data);
+
+        }
+        );
     };
     function llenaPuntuacionPeronal() {
         insertaPuntuacion("Jugador: ", "Puntuacion: ", "Procedencia: ", "Fecha:", $("#contenedorPersonal"));
@@ -41,10 +39,10 @@ var PersonalProfile = function () {
         }
     }
 
-    function llenaPuntuacionGlobales() {
+    function llenaPuntuacionGlobales(data) {
         insertaPuntuacion("Jugador: ", "Puntuacion: ", "Procedencia: ", "Fecha:", $("#contenedorGlobal"));
-        for (var i = 0; i < 30; i++) {
-            insertaPuntuacion("Alejandro", 123123123, "Mexico  Ags", "10/12/2015", $("#contenedorGlobal"));
+        for (var i = 0; i < data.length; i++) {
+            insertaPuntuacion("data", data.points, data.created_at, "10/12/2015", $("#contenedorGlobal"));
             console.log("Hola no.", i);
         }
     }
