@@ -9,7 +9,7 @@ var PersonalProfile = function () {
     var este = this;
     this.listaGlobal;
     this.listaPersonal;
-    this.id_user = 1;
+    this.id_user = 7;
     function insertaPuntuacion(usuario, puntuacion, lugar, fecha, $contenedor) {
         var $div = $("<div>", {class: "puntuacionDiv"});
         var $usuario = $("<div>", {text: usuario, class: "campos"});
@@ -19,43 +19,54 @@ var PersonalProfile = function () {
         $div.append($usuario, $puntuacion, $lugar, $fecha);
         $contenedor.append($div);
     }
+    
+    function getUser(id,data){
+        for(var i=0;i<data.length;i++){
+            if(data[i].id==id){
+                return data[i];
+            }
+        }
+    }
+    
+    
 
     this.init = function () {
-        var $header = $("header");
-        $header.append($("<span>", {text: "Nombre del jugador"}), $("<span>", {text: " Puntuacion Maxima:12312312"}));
-        llenaPuntuacionPeronal();
-
         console.log("Hola");
-        ajax("POST"
-                , "games/getGamesUsers", null,
+        ajax("POST",
+                "games/getAllGames",null,
                 llenaPuntuacionGlobales
                 , function (data) {
                     console.error(data);
 
                 });
-        ajax("POST", "games/getgamesuser", {id_user: este.id_user}, llenaPuntuacionPeronal, function (data) {
+        ajax("POST", "games/getGamesUsers", {id: este.id_user}, llenaPuntuacionPeronal, function (data) {
             console.error(data);
         });
 
     };
     function llenaPuntuacionPeronal(data) {
-        console.log(data, "----");
+        var user =getUser(este.id_user,data);
+        var games =user.games
+        var $header = $("header");
+        $header.append($("<span>", {id:"nombreUsuario",text: "Nombre: " +user.username}), $("<span>", {id:"puntuacionMaxima",text: " Puntuacion Maxima: "+games[games.length-1].points}));
+        console.log(data, "----",user);
         este.listaPersonal = data;
         insertaPuntuacion("Jugador: ", "Puntuacion: ", "Procedencia: ", "Fecha:", $("#contenedorPersonal"));
-        for (var i = 0; i < 10; i++) {
-            insertaPuntuacion("Alejandro", 123123123, "Mexico  Ags", "10/12/2015", $("#contenedorPersonal"));
-            console.log("Hola no.", i);
+        for (var i = 0; i < games.length; i++) {
+            insertaPuntuacion(user.username, games[i].points, user.country, games[i].created_at, $("#contenedorPersonal"));
+            //console.log("Hola no.", i);
         }
     }
 
     function llenaPuntuacionGlobales(data) {
         console.log(data, "----", data.length);
         este.listaGlobal = data;
+        hola=data;
         insertaPuntuacion("Jugador: ", "Puntuacion: ", "Procedencia: ", "Fecha:", $("#contenedorGlobal"));
-//        for (var i = 0; i < data.length; i++) {
-//            insertaPuntuacion(data[i].name, data[i].points, data[i].country, data[i].date, $("#contenedorGlobal"));
-//            //console.log("Hola no.", i);
-//        }
+        for (var i = data.length-1; i >= 0; i--) {
+            insertaPuntuacion(data[i].name, data[i].points, data[i].country, data[i].date, $("#contenedorGlobal"));
+            //console.log("Hola no.", i);
+        }
     }
 
 

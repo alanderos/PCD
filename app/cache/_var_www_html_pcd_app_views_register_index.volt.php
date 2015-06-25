@@ -1,68 +1,69 @@
 <?php echo $this->tag->stylesheetLink('css/cssFormulario.css'); ?>
 <div id="formulario">
-	
+
 	<?php
 		echo $this->getContent();
 	?>
-	
+
 	<?php echo $this->tag->form(array("register/save", "method" => "post")); ?>
-	
-	<fieldset class="account-info">
-		<label for="username">Username:</label>
+
+    <fieldset class="account-info">
+        <label for="username">Username:</label>
 		<?php
 			echo $this->tag->textField("username");
 		?>
-	</fieldset>
-	
-	<fieldset class="account-info">
-		<label for="password">Password:</label>
+    </fieldset>
+
+    <fieldset class="account-info">
+        <label for="password">Password:</label>
 		<?php
 			echo $this->tag->passwordField("password");
 		?>
-	</fieldset>
-	
-	<fieldset class="account-info">
-		<label for="name">Name:</label>
-		
+    </fieldset>
+
+    <fieldset class="account-info">
+        <label for="name">Name:</label>
+
 		<?php
 			echo $this->tag->textField("name");
 		?>
-	</fieldset>
-	
-	<fieldset class="account-info">
-		<label for="email">Email:</label>
+    </fieldset>
+
+    <fieldset class="account-info">
+        <label for="email">Email:</label>
 		<?php
 			echo $this->tag->textField("email");
 		?>
-	</fieldset>
-	
-	<fieldset class="account-info">
-		<label for="email">Lastname:</label>
+    </fieldset>
+
+    <fieldset class="account-info">
+        <label for="email">Lastname:</label>
 		<?php
 			echo $this->tag->textField("lastname");
 		?>
-	</fieldset>
-	
-	<fieldset class="account-info">
-		<label for="email">Country:</label>
+    </fieldset>
+
+    <fieldset class="account-info">
+        <label for="email">Country:</label>
 		<?php
 			echo $this->tag->textField("country");
 		?>
-	</fieldset>
-	
-	<fieldset class="account-info">
-		<label for="email">Gender:</label>
+    </fieldset>
+
+    <fieldset class="account-info">
+        <label for="email">Gender:</label>
 		<?php
 			echo $this->tag->textField("gender");
 		?>
-	</fieldset>
-	
-	<fieldset class="account-action">
-		<p id="boton">
+    </fieldset>
+
+    <fieldset class="account-action">
+        <p id="boton">
                     <?php echo $this->tag->submitButton("Registro"); ?>
-                     
-		</p>
-               <input class="btn" type="submit" name="submit" value="Regresar">
-               
-	</fieldset>
+
+        </p>
+
+        <input class="btn" type="button" name="submit" value="Regresar" onClick="location.href = '/PCD/'"/>
+
+    </fieldset>
 </div>

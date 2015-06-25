@@ -8,5 +8,5 @@
         <input name="contrasena" type="password"/>
         <input type="submit"/>
     </form>
-    <a ><div id="registroBoton">REGISTRATE</div></a>
+    <a href="profile" ><div id="registroBoton">REGISTRATE</div></a>
 </div>

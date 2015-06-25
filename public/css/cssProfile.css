@@ -14,12 +14,23 @@ and open the template in the editor.
 .campos{
     color:white;
     border:1px black solid;
-
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     display: inline-block;
     background-color: green;
     width: 135px;
 }
 
+#puntuacionMaxima{
+    display: inline-block;
+    float: right;
+    margin-right: 50px;
+}
+#nombreUsuario{
+    display: inline-block;
+    margin-left: 50px;
+}
 #contenedorPersonal{
 
 }
@@ -66,6 +77,14 @@ and open the template in the editor.
 and (device-width: 360px) 
 and (device-height: 640px) 
 and (-webkit-device-pixel-ratio: 3) {
+    #puntuacionMaxima{
+        float: none;
+        margin:0;
+    }
+    #nombreUsuario{
+        display: block;
+        margin: 0;
+    }
     .tituloPuntuacion{
         font-size: 60px;
     }
