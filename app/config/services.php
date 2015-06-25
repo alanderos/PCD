@@ -38,7 +38,7 @@ $di->setShared('view', function () use ($config) {
     $view->setViewsDir($config->application->viewsDir);
 
     $view->registerEngines(array(
-        '.volt' => function ($view, $di) use ($config) {
+        '.phtml' => function ($view, $di) use ($config) {
 
             $volt = new VoltEngine($view, $di);
 
@@ -49,7 +49,7 @@ $di->setShared('view', function () use ($config) {
 
             return $volt;
         },
-                '.phtml' => 'Phalcon\Mvc\View\Engine\Php'
+                '.php' => 'Phalcon\Mvc\View\Engine\Php'
             ));
 
             return $view;
