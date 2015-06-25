@@ -45,14 +45,20 @@ var PersonalProfile = function () {
 
     };
     function llenaPuntuacionPeronal(data) {
+        este.listaPersonal = data;
         var user =getUser(este.id_user,data);
         var games =user.games
         var $header = $("header");
         $header.append($("<span>", {id:"nombreUsuario",text: "Nombre: " +user.username}), $("<span>", {id:"puntuacionMaxima",text: " Puntuacion Maxima: "+games[games.length-1].points}));
         console.log(data, "----",user);
-        este.listaPersonal = data;
+        var cantidad;
+        if(games.length){
+            cantidad=games.length;
+        }else{
+            cantidad=10;
+        }
         insertaPuntuacion("Jugador: ", "Puntuacion: ", "Procedencia: ", "Fecha:", $("#contenedorPersonal"));
-        for (var i = 0; i < games.length; i++) {
+        for (var i = cantidad-1; i > 0; i--) {
             insertaPuntuacion(user.username, games[i].points, user.country, games[i].created_at, $("#contenedorPersonal"));
             //console.log("Hola no.", i);
         }
@@ -62,8 +68,15 @@ var PersonalProfile = function () {
         console.log(data, "----", data.length);
         este.listaGlobal = data;
         hola=data;
+        var cantidad;
+        if(data.length<20){
+            cantidad=data.length-1;
+        }else{
+            cantidad=20;
+        }
+        
         insertaPuntuacion("Jugador: ", "Puntuacion: ", "Procedencia: ", "Fecha:", $("#contenedorGlobal"));
-        for (var i = data.length-1; i >= 0; i--) {
+        for (var i = cantidad; i >= 0; i--) {
             insertaPuntuacion(data[i].name, data[i].points, data[i].country, data[i].date, $("#contenedorGlobal"));
             //console.log("Hola no.", i);
         }
