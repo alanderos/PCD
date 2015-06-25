@@ -21,19 +21,14 @@ class GamesController extends \Phalcon\Mvc\Controller {
         $games = Games::findFirst($id_user);
         echo json_encode($games->toArray());
     }
-    
-    
+
     public function getGamesUserAction($id_user) {
         $this->view->disable();
         header("Content-type: application/json; charset=utf-8");
-        $games = Games::find($id_user,array(
-            "order" => "points"
+        $games = Games::find($id_user, array(
+                    "order" => "points"
         ));
         echo json_encode($games->toArray());
-    }
-
-    public function insertGameAction($id_user, $points, $created_at) {
-        $this->view->disable();
     }
 
     //-------------------------------------------
@@ -51,10 +46,10 @@ class GamesController extends \Phalcon\Mvc\Controller {
     //-------------------------------------------
 
 
-    public function insertPointsAction($id_user,$points) {
+    public function insertPointsAction($id_user, $points) {
         $this->view->disable();
         $date = getdate();
-        $date = ($date['mday']).'/'.($date['mon']).'/'.($date['year']);
+        $date = ($date['mday']) . '/' . ($date['mon']) . '/' . ($date['year']);
         $phql = "INSERT INTO Games (id_user, points, created_at) VALUES (:userid:, :points:, :date:)";
         $this->modelsManager->executeQuery($phql, array(
             'userid' => $id_user,
@@ -63,5 +58,7 @@ class GamesController extends \Phalcon\Mvc\Controller {
                 )
         );
     }
+
+    
 
 }
