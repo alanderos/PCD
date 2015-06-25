@@ -7,7 +7,10 @@
         <base href="/PDC/"/>
     
         <?php echo $this->tag->stylesheetLink('css/cssPlantilla.css'); ?>
-        <?php echo $this->tag->stylesheetLink('css/cssFormulario.css'); ?>
+        <?php echo $this->tag->javascriptInclude('js/jquery-2.1.4.min.js'); ?>
+        <?php echo $this->tag->stylesheetLink('css/cssProfile.css'); ?>
+        <?php echo $this->tag->javascriptInclude('js/profile.js'); ?>
+        
     
     </head>
     <body>

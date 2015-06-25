@@ -1,5 +1,5 @@
 <?php
-header("Content-type: application/json; charset=utf-8");
+
 
 class GamesController extends \Phalcon\Mvc\Controller
 {
@@ -12,26 +12,18 @@ class GamesController extends \Phalcon\Mvc\Controller
     
     public function getgamesAction(){
         $this->view->disable();
+        header("Content-type: application/json; charset=utf-8");
         $games =  Games::find(array(
             "order" => "points" 
         ));
-        $gamesA=[];
-        foreach ($games as $game){
-            array_push($gamesA, $game);
-        }
-        echo json_encode($gamesA);
+        echo json_encode($games->toArray());
     }
     
     public function getGameIdAction($id_user){
         $this->view->disable();
-        $games =  Games::find(array(
-            "id_user =  ".$id_user.""
-        ));
-        $gamesA=[];
-        foreach ($games as $game){
-            array_push($gamesA, $game);
-        }
-        echo json_encode($gamesA);
+        header("Content-type: application/json; charset=utf-8");
+        $games =  Games::findFirst($id_user);
+        echo json_encode($games->toArray());
     }
 
     public function insertGameAction($id_user,$points,$created_at){
