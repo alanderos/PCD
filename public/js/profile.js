@@ -18,7 +18,7 @@ var PersonalProfile = function () {
 
     this.init = function () {
         var $header = $("header");
-        $header.append($("<span>", {text: "Nombre del jugador    " + "Puntuacion Maxima:12312312"}))
+        $header.append($("<span>", {text: "Nombre del jugador"}),$("<span>",{text:" Puntuacion Maxima:12312312"}));
         llenaPuntuacionPeronal();
         llenaPuntuacionGlobales();
         console.log("Hola");

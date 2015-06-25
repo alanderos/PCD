@@ -14,7 +14,7 @@ and open the template in the editor.
 .campos{
     color:white;
     border:1px black solid;
-    
+
     display: inline-block;
     background-color: green;
     width: 135px;
@@ -61,11 +61,14 @@ and open the template in the editor.
     background-color: #2ff624;
     border-radius: 10px;
 }
-
+/*portrait*/
 @media screen 
 and (device-width: 360px) 
 and (device-height: 640px) 
 and (-webkit-device-pixel-ratio: 3) {
+    .tituloPuntuacion{
+        font-size: 60px;
+    }
     #playButtom{
         font-size: 150px;
         height: 200px;
@@ -76,7 +79,11 @@ and (-webkit-device-pixel-ratio: 3) {
         border-bottom:10px solid #292929;
         border-top:10px solid #292929;
     }
+    body{
+
+    }
     .campos{
+        font-size: 40px;
         margin: 0px;
         width: 49%;
     }
@@ -104,7 +111,7 @@ and (-webkit-device-pixel-ratio: 3) {
     }
 
 }
-/* Portrait */
+/* landscape */
 
 @media screen 
 and (device-width: 640px) 
@@ -125,11 +132,40 @@ and (-webkit-device-pixel-ratio: 3) {
         width: 49%;
     }
 
-    #contenedorPersonal{
+    #contenedorPuntuaciones{
+        font-size: 40px;
+        min-height: 80%;
+        max-width: 90%;
+        position: relative;
 
     }
+    .contenedores{
+        padding: 5px;
+        display: inline-block;
+        margin: 0px;
+        border: 1px black solid;
+        width: 100%;
+    }   
+}
 
-    #contenedorGlobal{
+/* landscape*/
+/*@media screen 
+and (device-width: 640px) 
+and (device-height: 360px) 
+and (-webkit-device-pixel-ratio: 3) {
+    #playButtom{
+        font-size: 150px;
+        height: 200px;
+        width: 500px;
+        border-radius: 20px;
+    }
+    .puntuacionDiv{
+        border-bottom:5px solid #292929;
+        border-top:5px solid #292929;
+    }
+    .campos{
+        margin: 0px;
+        width: 49%;
     }
 
     #contenedorPuntuaciones{
@@ -146,4 +182,4 @@ and (-webkit-device-pixel-ratio: 3) {
         border: 1px black solid;
         width: 100%;
     }   
-}
+}*/
