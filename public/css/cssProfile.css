@@ -14,10 +14,10 @@ and open the template in the editor.
 .campos{
     color:white;
     border:1px black solid;
-    margin: 1px;
+    
     display: inline-block;
     background-color: green;
-    width: 131px;
+    width: 135px;
 }
 
 #contenedorPersonal{
@@ -34,7 +34,7 @@ and open the template in the editor.
 
 #contenedorPuntuaciones{
     min-height: 80%;
-    width: 550px;
+    width: 580px;
     position: absolute;
     top: 60px;
     left:0px;

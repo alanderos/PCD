@@ -49,15 +49,6 @@ var PersonalProfile = function () {
         }
     }
 
-    function ajax(type, url, data, succes, error) {
-        $.ajax({
-            url: url,
-            type: type,
-            contentType: "json",
-            data: data,
-            success: succes,
-            error: error
-        });
-    }
+    
 
 };
