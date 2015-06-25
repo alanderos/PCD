@@ -23,7 +23,7 @@ var PersonalProfile = function () {
         
         console.log("Hola");
         ajax("POST"
-                , "games/getgames", null,
+                , "games/getGamesUsers", null,
                 llenaPuntuacionGlobales
         , function (data) {
             console.error(data);
@@ -40,11 +40,12 @@ var PersonalProfile = function () {
     }
 
     function llenaPuntuacionGlobales(data) {
+        console.log(data,"----",data.length);
         insertaPuntuacion("Jugador: ", "Puntuacion: ", "Procedencia: ", "Fecha:", $("#contenedorGlobal"));
-        for (var i = 0; i < data.length; i++) {
-            insertaPuntuacion("data", data.points, data.created_at, "10/12/2015", $("#contenedorGlobal"));
-            console.log("Hola no.", i);
-        }
+//        for (var i = 0; i < data.length; i++) {
+//            insertaPuntuacion(data[i].name, data[i].points, data[i].country, data[i].date, $("#contenedorGlobal"));
+//            //console.log("Hola no.", i);
+//        }
     }
 
     
