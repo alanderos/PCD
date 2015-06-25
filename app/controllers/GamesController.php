@@ -34,9 +34,11 @@ class GamesController extends \Phalcon\Mvc\Controller
     public function getGamesUsersAction()
     {	$phql = 'select Users.username as name,Users.country as country,'
                 . 'Games.points as points,Games.created_at as date from Games,'
-                . 'Users where Games.id_user = Users.id order by Games.points';
+                . 'Users where Games.id_user = Users.id';
 		$games = $this->modelsManager->executeQuery($phql);
-                echo json_encode($games->toArray());
+                echo json_encode($games->toArray(array(
+                    "order" => "points"
+                )));
  
 		
     }
