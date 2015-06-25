@@ -1,10 +1,10 @@
 <?php
+
 /**
  * Services are globally registered in this file
  *
  * @var \Phalcon\Config $config
  */
-
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\Url as UrlResolver;
@@ -49,44 +49,44 @@ $di->setShared('view', function () use ($config) {
 
             return $volt;
         },
-        '.phtml' => 'Phalcon\Mvc\View\Engine\Php'
-    ));
+                '.phtml' => 'Phalcon\Mvc\View\Engine\Php'
+            ));
 
-    return $view;
-});
+            return $view;
+        });
 
-/**
- * Database connection is created based in the parameters defined in the configuration file
- */
-$di->set('db', function () use ($config) {
-    return new DbAdapter($config->database->toArray());
-});
+        /**
+         * Database connection is created based in the parameters defined in the configuration file
+         */
+        $di->set('db', function () use ($config) {
+            return new DbAdapter($config->database->toArray());
+        });
 
-/**
- * If the configuration specify the use of metadata adapter use it or use memory otherwise
- */
-$di->set('modelsMetadata', function () {
-    return new MetaDataAdapter();
-});
+        /**
+         * If the configuration specify the use of metadata adapter use it or use memory otherwise
+         */
+        $di->set('modelsMetadata', function () {
+            return new MetaDataAdapter();
+        });
 
-/**
- * Start the session the first time some component request the session service
- */
-$di->setShared('session', function () {
-    $session = new SessionAdapter();
-    $session->start();
+        /**
+         * Start the session the first time some component request the session service
+         */
+        $di->setShared('session', function () {
+            $session = new SessionAdapter();
+            $session->start();
 
-    return $session;
-});
+            return $session;
+        });
 
-/**
-* podemos añadir clases personalizadas a los mensajes flash de esta forma
-*/
-$di->set('flash', function()
-{
-return new Phalcon\Flash\Direct(array(
-'error' => 'alert alert-error',
-'success' => 'alert alert-success',
-'notice' => 'alert alert-info',
-));
-});
+        /**
+         * podemos añadir clases personalizadas a los mensajes flash de esta forma
+         */
+        $di->set('flash', function() {
+            return new Phalcon\Flash\Direct(array(
+                'error' => 'alert alert-error',
+                'success' => 'alert alert-success',
+                'notice' => 'alert alert-info',
+            ));
+        });
+        

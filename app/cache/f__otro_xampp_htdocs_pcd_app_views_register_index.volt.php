@@ -1,4 +1,4 @@
-{{ stylesheet_link('css/cssFormulario.css') }}
+<?php echo $this->tag->stylesheetLink('css/cssFormulario.css'); ?>
 <div id="formulario">
 
 	<?php

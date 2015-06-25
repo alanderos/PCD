@@ -10,7 +10,7 @@
         <?php echo $this->tag->javascriptInclude('js/jquery-2.1.4.min.js'); ?>
         <?php echo $this->tag->stylesheetLink('css/cssProfile.css'); ?>
         <?php echo $this->tag->javascriptInclude('js/profile.js'); ?>
-        <?php echo $this->tag->stylesheetLink('css/cssFormulario.css'); ?>
+        
     
     </head>
     <body>
