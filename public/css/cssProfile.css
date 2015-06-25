@@ -17,7 +17,7 @@ and open the template in the editor.
     margin: 1px;
     display: inline-block;
     background-color: green;
-    width: 24%;
+    width: 131px;
 }
 
 #contenedorPersonal{
@@ -34,7 +34,7 @@ and open the template in the editor.
 
 #contenedorPuntuaciones{
     min-height: 80%;
-    max-width: 40%;
+    width: 550px;
     position: absolute;
     top: 60px;
     left:0px;
@@ -46,7 +46,7 @@ and open the template in the editor.
     display: inline-block;
     margin: 10px;
     border: 1px black solid;
-    width: 100%;
+    width: 550px;
 }
 
 
@@ -89,7 +89,7 @@ and (-webkit-device-pixel-ratio: 3) {
     }
 
     #contenedorPuntuaciones{
-        font-size: 80px;
+        //font-size: 80px;
         min-height: 80%;
         max-width: 100%;
         position: relative;

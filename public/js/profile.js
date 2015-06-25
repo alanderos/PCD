@@ -7,7 +7,7 @@
 
 var PersonalProfile = function () {
     function insertaPuntuacion(usuario, puntuacion, lugar, fecha, $contenedor) {
-        var $div = $("<div>",{class:"puntuacionDiv"});
+        var $div = $("<div>", {class: "puntuacionDiv"});
         var $usuario = $("<div>", {text: usuario, class: "campos"});
         var $puntuacion = $("<div>", {text: puntuacion, class: "campos"});
         var $lugar = $("<div>", {text: lugar, class: "campos"});
@@ -17,11 +17,21 @@ var PersonalProfile = function () {
     }
 
     this.init = function () {
-        var $header=$("header");
-        $header.append($("<span>",{text:"Nombre del jugador    "+"Puntuacion Maxima:12312312"}))
+        var $header = $("header");
+        $header.append($("<span>", {text: "Nombre del jugador    " + "Puntuacion Maxima:12312312"}))
         llenaPuntuacionPeronal();
         llenaPuntuacionGlobales();
         console.log("Hola");
+//        ajax("GET"
+//                , "games/getgames", null,
+//        function (data) {
+//            console.log(data);
+//        }
+//        , function (data) {
+//            console.error(data);
+//            
+//        }
+//        );
     };
     function llenaPuntuacionPeronal() {
         insertaPuntuacion("Jugador: ", "Puntuacion: ", "Procedencia: ", "Fecha:", $("#contenedorPersonal"));
@@ -30,7 +40,7 @@ var PersonalProfile = function () {
             console.log("Hola no.", i);
         }
     }
-    
+
     function llenaPuntuacionGlobales() {
         insertaPuntuacion("Jugador: ", "Puntuacion: ", "Procedencia: ", "Fecha:", $("#contenedorGlobal"));
         for (var i = 0; i < 30; i++) {
@@ -39,6 +49,15 @@ var PersonalProfile = function () {
         }
     }
 
-    
+    function ajax(type, url, data, succes, error) {
+        $.ajax({
+            url: url,
+            type: type,
+            contentType: "json",
+            data: data,
+            success: succes,
+            error: error
+        });
+    }
 
 };
