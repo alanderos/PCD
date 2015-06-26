@@ -1,6 +1,11 @@
- <div id="chickenGameDiv">
+   <link href="css/game.css" rel="stylesheet" type="text/css"/>
+
+<div id="chickenGameDiv">
     <canvas id="chickenGame" width="800px" height="600px"></canvas>
 </div>
 
-
+<script>
+    var user_id= {{ user_id | json_encode }};
+    
+</script>
 <script src="js/game.js" type="text/javascript"></script>

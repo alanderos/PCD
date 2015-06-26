@@ -211,11 +211,20 @@ canvas.Scene.new({
         this.endCounter=0;
     },
     render: function (stage) {
+        
+        var points = this.hitCounter;
         if(this.finalizar){
             this.endCounter++;
             console.log(this.endCounter);
             if(this.endCounter>100){
               this.pause(true);
+                setTimeout(function(){
+                    ajax('post','Games/insertPoints/'+user_id+'/'+points,null, function(){
+                        window.location="profile";
+                    }, function(){
+                        console.error("Error");
+                    })
+                },5000);
             }
         }
         
