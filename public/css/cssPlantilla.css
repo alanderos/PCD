@@ -33,7 +33,7 @@ header{
   and (-webkit-device-pixel-ratio: 3) {
       header{
           height: 200px;
-             font-size: 60px;
+             font-size: 30px;
       }
 }
 /* landscape*/
@@ -42,6 +42,6 @@ header{
   and (device-height: 360px) 
   and (-webkit-device-pixel-ratio: 3) {
       header{    
-             font-size: 40px;
+             font-size: 25px;
       }
 }

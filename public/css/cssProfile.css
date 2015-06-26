@@ -91,6 +91,12 @@ a:visited{text-decoration:none;}
 and (device-width: 360px) 
 and (device-height: 640px) 
 and (-webkit-device-pixel-ratio: 3) {
+    
+    header{width: 100%;}
+    #logoutbuttom{
+    position:absolute;
+    top: 100px;
+    right: 50px;}
     #puntuacionMaxima{
         float: none;
         margin:0;
@@ -103,9 +109,9 @@ and (-webkit-device-pixel-ratio: 3) {
         font-size: 60px;
     }
     #playButtom{
-        font-size: 150px;
-        height: 200px;
-        width: 600px;
+        font-size: 80px;
+        height: 150px;
+        width: 300px;
         border-radius: 20px;
     }
     .puntuacionDiv{
