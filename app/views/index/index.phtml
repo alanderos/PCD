@@ -1,0 +1,19 @@
+{{ stylesheet_link('css/cssLogin.css') }}
+<div id="cuadrito">
+    <div>
+        <span id=titulo>Iniciar sesion</span>
+    </div>
+    <form action="/PCD/sesion/getUser" method="post">
+        <input name="email" type="email placeholder="email"/>
+        <input name="contrasena" type="password"/>
+        <input type="submit"/>
+    </form>
+
+   <script>
+       var error={{ error | json_encode }};
+        if(error!==null){
+            alert(error);
+        }
+       </script>
+    <a href="register"><div id="registroBoton">REGISTRATE</div></a>
+</div>

@@ -5,7 +5,7 @@ use Phalcon\Validation\Validator\PresenceOf,
     Phalcon\Mvc\Model\Validator\Uniqueness as UniquenessValidator,
     Phalcon\Mvc\Model\Validator\StringLength as StringLengthValidator;
 
-class Users extends \Phalcon\Mvc\Model
+class Users extends Base
 {
 
     /**
@@ -60,6 +60,10 @@ class Users extends \Phalcon\Mvc\Model
         return 'users';
     }
 
+    public function initialize()
+    {
+        $this->hasMany('id', 'Games', 'id_user', array('alias' => 'Games'));
+    }
     /**
      * Allows to query a set of records that match the specified conditions
      *

@@ -1,6 +1,6 @@
 <?php
 
-class Games extends \Phalcon\Mvc\Model
+class Games extends Base
 {
 
     /**
@@ -65,6 +65,11 @@ class Games extends \Phalcon\Mvc\Model
     public static function findFirst($parameters = null)
     {
         return parent::findFirst($parameters);
+    }
+    
+    public function beforeValidationOnCreate()
+    {
+        $this->created_at = date('Y-m-d H:i:s');
     }
 
 }

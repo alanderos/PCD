@@ -1,7 +1,10 @@
 <header></header>
+<a href="index/logout"><div id="logoutbuttom">LOGOUT</div></a>
 <div id="contenedorPuntuaciones">
+    
     <br/>
-    <a><div id="playButtom">JUGAR</div></a>
+    <a href="jugar"><div id="playButtom">JUGAR</div></a>
+    
     <br/>
     <div>
         <span class="tituloPuntuacion">Mis puntuaciones:</span>
@@ -16,6 +19,7 @@
 
 
 <script>
+    var userName={{ userName | json_encode }};
     var personalProfile = new PersonalProfile();
     personalProfile.init();
 </script>

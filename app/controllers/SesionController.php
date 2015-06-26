@@ -49,6 +49,7 @@ class SesionController extends \Phalcon\Mvc\Controller {
 		$this->view->disable();
         //Destroy the whole session
         $this->session->destroy();
+        return $this->response->redirect('/profile/');
     }
 
 }
