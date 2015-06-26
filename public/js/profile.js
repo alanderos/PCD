@@ -9,7 +9,7 @@ var PersonalProfile = function () {
     var este = this;
     this.listaGlobal;
     this.listaPersonal;
-    this.id_user = 7;
+    this.id_user;
     function insertaPuntuacion(usuario, puntuacion, lugar, fecha, $contenedor) {
         var $div = $("<div>", {class: "puntuacionDiv"});
         var $usuario = $("<div>", {text: usuario, class: "campos"});
@@ -31,6 +31,7 @@ var PersonalProfile = function () {
     
 
     this.init = function () {
+        este.id_user=userName;
         console.log("Hola");
         ajax("POST",
                 "games/getAllGames",null,
@@ -52,13 +53,13 @@ var PersonalProfile = function () {
         $header.append($("<span>", {id:"nombreUsuario",text: "Nombre: " +user.username}), $("<span>", {id:"puntuacionMaxima",text: " Puntuacion Maxima: "+games[games.length-1].points}));
         console.log(data, "----",user);
         var cantidad;
-        if(games.length){
-            cantidad=games.length;
+        if(games.length<10){
+            cantidad=games.length-1;
         }else{
             cantidad=10;
         }
         insertaPuntuacion("Jugador: ", "Puntuacion: ", "Procedencia: ", "Fecha:", $("#contenedorPersonal"));
-        for (var i = cantidad-1; i > 0; i--) {
+        for (var i = cantidad; i >= 0; i--) {
             insertaPuntuacion(user.username, games[i].points, user.country, games[i].created_at, $("#contenedorPersonal"));
             //console.log("Hola no.", i);
         }

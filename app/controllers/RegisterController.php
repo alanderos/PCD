@@ -40,7 +40,7 @@ class RegisterController extends \Phalcon\Mvc\Controller {
                 echo '<script language="javascript">';
                 echo 'alert("Te has registrado correctamente.")';
                 echo '</script>';
-                return $this->response->redirect('/sesion/');
+                return $this->response->redirect('/PCD/');
             }
         }
         //si no es una petición post
